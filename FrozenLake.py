@@ -166,6 +166,7 @@ def run_env():
 res_all = pd.DataFrame()
 st_all = pd.DataFrame()
 
+#numero de veces que lo hara, en este caso son 5 mapas distintos
 for _ in range(5):
     env = gym.make(
         "FrozenLake-v1",
