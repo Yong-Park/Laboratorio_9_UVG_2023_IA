@@ -1,16 +1,14 @@
 # referencia de https://gymnasium.farama.org/tutorials/training_agents/FrozenLake_tuto/#sphx-glr-tutorials-training-agents-frozenlake-tuto-py
 
-from pathlib import Path
-from typing import NamedTuple
-
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+from typing import NamedTuple
 
 import gymnasium as gym
 from gymnasium.envs.toy_text.frozen_lake import generate_random_map
 
+# Clase Params que se tiene qué pasar a la clase FrozenLake.
 class Params(NamedTuple):
     total_episodes: int  # Total episodes
     learning_rate: float  # Learning rate
