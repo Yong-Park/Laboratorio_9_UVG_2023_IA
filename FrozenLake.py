@@ -1,27 +1,27 @@
+"""
+Universidad del Valle de Guatemala
+(CC3085) Inteligencia Artificial
+Laboratorio 09: Aprendizaje por Refuerzo
+
+Miembros del equipo:
+- Pedro Pablo Arriola Jiménez (20188)
+- Oscar Fernando López Barrios (20679)
+- Yong Bum Park (20117)
+- Santiago Taracena Puga (20017)
+"""
+
 # referencia de https://gymnasium.farama.org/tutorials/training_agents/FrozenLake_tuto/#sphx-glr-tutorials-training-agents-frozenlake-tuto-py
 
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-from typing import NamedTuple
 
 import gymnasium as gym
 from gymnasium.envs.toy_text.frozen_lake import generate_random_map
 
-# Clase Params que se tiene qué pasar a la clase FrozenLake.
-class Params(NamedTuple):
-    total_episodes: int  # Total episodes
-    learning_rate: float  # Learning rate
-    gamma: float  # Discounting rate
-    epsilon: float  # Exploration probability
-    map_size: int  # Number of tiles of one side of the squared environment
-    seed: int  # Define a seed so that we get reproducible results
-    is_slippery: bool  # If true the player will move in intended direction with probability of 1/3 else will move in either perpendicular direction with equal probability of 1/3 in both directions
-    action_size: int  # Number of possible actions
-    state_size: int  # Number of possible states
-    proba_frozen: float  # Probability that a tile is frozen
+from params import FrozenLakeParams
 
-params = Params(
+params = FrozenLakeParams(
     total_episodes=10000,
     learning_rate=0.8,
     gamma=0.95,
